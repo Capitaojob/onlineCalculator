@@ -1,0 +1,210 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+
+    --bgColor: rgb(40, 81, 83);
+    --calcBack: #a592b3;
+    --calcBorder: #756880;
+    
+    --button-size: 100px;
+    --btnColor: rgba(255, 255, 255, 0.3);
+    --charBtnColor: rgba(130, 210, 206, 0.2);
+    --specialTextColor: #c759a9;
+    --specialBgColor: rgba(130, 210, 206, 0.5);
+
+    /* Color Theme*/
+    --btn: #444444;
+}
+
+body {
+    background-color: var(--bgColor);
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Oswald', sans-serif;
+}
+
+body,
+body * {
+    transition: background-color 300ms ease,
+                color 300ms ease,
+                box-shadow 300ms ease;
+}
+
+/* Calculator Foundation */
+
+.calculator {
+    width: 600px;
+    height: calc(100vh - 100px);
+    border-radius: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+}
+
+.calculator > * {
+    width: 90%;
+}
+
+/* Calculator Foundation End*/
+
+/*--------------------*/
+
+/* Calculator Color Btn */
+
+.colorBtn {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 50px;
+    top: 24px;
+    border: 3px solid rgb(85, 85, 85);
+    border-radius: 50%;
+    background-color: var(--btn);
+    z-index: 10000;
+    cursor: pointer;
+}
+
+/* Calculator Color Btn End*/
+
+/*--------------------*/
+
+/* Calculator Head */
+
+.calcHead {
+    background-color: var(--calcBack);
+    height: 35%;
+    position: relative;
+
+    border-radius: 30px 30px 0 0;
+
+    border: 6px solid var(--calcBorder);
+    border-bottom: none;
+}
+
+.calcHead::after {
+    content: '';
+    position: absolute;
+    width: 90%;
+    border-radius: 20px;
+    height: 8px;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+form {
+    width: 90%;
+    height: 100%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visor {
+    height: 25%;
+    width: 90%;
+    background-color: rgba(130, 210, 206, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 0 10px 6px rgba(0,0,0,0.1);
+    border: none;
+    padding: 0 20px;
+
+    font-size: 3rem;
+    font-family: 'Oswald', sans-serif;
+    text-align: right;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* Calculator Head End */
+
+/*--------------------*/
+
+/* Calculator Buttons */
+
+.calcButtons {
+    background-color: var(--calcBack);
+    height: 65%;
+    width: 90%;
+    padding: 10px 0;
+
+    /* box-shadow: -16px 16px 0 #4b4352; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    border-radius: 0 0 30px 30px;
+    border: 6px solid var(--calcBorder);
+    border-top: none;
+}
+
+.buttonRow {
+    width: 86%;
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.buttonElement {
+    height: var(--button-size);
+    width: var(--button-size);
+
+    background-color: var(--btnColor);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    color: #222;
+    
+    box-shadow: 0 0 10px 6px rgba(0,0,0,0.1);
+
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+
+.buttonElement:hover {
+    transform: translate(3px, -3px);
+    box-shadow: -3px 3px rgba(51, 51, 51, 0.6),
+                -5px 5px 10px 6px rgba(0,0,0,0.2);
+}
+
+.buttonElement:active {
+    transform: translate(0px, 0px);
+    box-shadow: 0 0 10px 6px rgba(0,0,0,0.1),
+                inset -3px 3px 10px rgba(0,0,0,1),
+                inset 0 0 100px rgba(0,0,0,0.1);
+}
+
+.charBtn {
+    background-color: var(--charBtnColor); 
+    font-weight: bold;
+}
+
+.C,
+.delete {
+    color: var(--specialTextColor);
+    background-color: var(--specialBgColor); 
+}
+
+/* Calculator Buttons End */
