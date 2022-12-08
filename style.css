@@ -42,7 +42,7 @@ body * {
 
 .calculator {
     width: 600px;
-    height: calc(100vh - 100px);
+    height: 894px;
     border-radius: 30px;
 
     display: flex;
@@ -208,3 +208,57 @@ input:focus {
 }
 
 /* Calculator Buttons End */
+
+@media screen and (max-width: 550px) {
+
+    :root {
+        --button-size: calc(100vw / 6);
+    }
+
+    .calculator {
+        width: 90%;
+        height: 90%;
+    }
+
+    .visor {
+        font-size: 2em;
+    }
+
+    .buttonElement {
+        font-size: 2em;
+    }
+
+    .colorBtn {
+        width: 30px;
+        height: 30px;
+        right: 30px;
+        top: 15px;
+    }
+
+}
+
+@media screen and (max-width: 390px) {
+    .calculator {
+        height: 70%;
+        width: 95%;
+    }
+
+    .calculator::before {
+        content: 'Made by João Bataglia';
+        position: absolute;
+        top: -100px;
+        width: 80%;
+        text-align: center;
+        font-size: 2.2em;
+        color: var(--calcBorder);
+        filter: drop-shadow(0px 0px 2px var(--specialBgColor));
+        
+    }
+
+    .colorBtn {
+        width: 30px;
+        height: 30px;
+        right: 25px;
+        top: 15px;
+    }
+}
